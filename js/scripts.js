@@ -11,6 +11,9 @@ var fSpace = false;
 var gSpace = false;
 var hSpace = false;
 var iSpace = false;
+var inputCell = "";
+var grabCharacter = "";
+// var cellName = "";
 
 function checkWin() {
   if (player1==true) {
@@ -58,168 +61,88 @@ function changeTurn() {
   player2 = !player2;
 }
 
+function markCell(inputCharacter) {
+  var cellName = inputCharacter + "Space";
+  parsedCellName = eval(cellName);
+  if (parsedCellName == false) {
+    if (player1 == true) {
+      $("#" + inputCharacter + "-space").text("X");
+      arrayPlayer1.push(inputCharacter);
+      parsedCellName = true;
+      changeTurn();
+    } else if (player2 == true) {
+      $("#" + inputCharacter + "-space").text("O");
+      arrayPlayer2.push(inputCharacter);
+      parsedCellName = true;
+      changeTurn();
+
+    }
+  }
+}
 
 $(document).ready(function() {
   $("#a-space").click(function(event) {
     event.preventDefault();
-    if (aSpace == false) {
-      if (player1 == true) {
-        $("#a-space").text("X");
-        arrayPlayer1.push("a");
-        console.log(arrayPlayer1);
-        aSpace = true;
-        changeTurn();
-      } else if (player2 == true) {
-        $("#a-space").text("O");
-        arrayPlayer2.push("a");
-        aSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#b-space").click(function(event) {
     event.preventDefault();
-    if (bSpace == false) {
-      if (player1 == true) {
-        $("#b-space").text("X");
-        arrayPlayer1.push("b");
-        bSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#b-space").text("O");
-        arrayPlayer2.push("b");
-        bSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
+
   });
 
   $("#c-space").click(function(event) {
     event.preventDefault();
-    if (cSpace == false) {
-      if (player1 == true) {
-        $("#c-space").text("X");
-        arrayPlayer1.push("c");
-        cSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#c-space").text("O");
-        arrayPlayer2.push("c");
-        cSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#d-space").click(function(event) {
     event.preventDefault();
-    if (dSpace == false) {
-      if (player1 == true) {
-        $("#d-space").text("X");
-        arrayPlayer1.push("d");
-        dSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#d-space").text("O");
-        arrayPlayer2.push("d");
-        dSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#e-space").click(function(event) {
     event.preventDefault();
-    if (eSpace == false) {
-      if (player1 == true) {
-        $("#e-space").text("X");
-        arrayPlayer1.push("e");
-        eSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#e-space").text("O");
-        arrayPlayer2.push("e");
-        eSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#f-space").click(function(event) {
     event.preventDefault();
-    if (fSpace == false) {
-      if (player1 == true) {
-        $("#f-space").text("X");
-        arrayPlayer1.push("f");
-        fSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#f-space").text("O");
-        arrayPlayer2.push("f");
-        fSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#g-space").click(function(event) {
     event.preventDefault();
-    if (gSpace == false) {
-      if (player1 == true) {
-        $("#g-space").text("X");
-        arrayPlayer1.push("g");
-        gSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#g-space").text("O");
-        arrayPlayer2.push("g");
-        gSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#h-space").click(function(event) {
     event.preventDefault();
-    if (hSpace == false) {
-      if (player1 == true) {
-        $("#h-space").text("X");
-        arrayPlayer1.push("h");
-        hSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#h-space").text("O");
-        arrayPlayer2.push("h");
-        hSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
   $("#i-space").click(function(event) {
     event.preventDefault();
-    if (iSpace == false) {
-      if (player1 == true) {
-        $("#i-space").text("X");
-        arrayPlayer1.push("i");
-        iSpace = true;
-        console.log(arrayPlayer1);
-        changeTurn();
-      } else if (player2 == true) {
-        $("#i-space").text("O");
-        arrayPlayer2.push("i");
-        iSpace = true;
-        changeTurn();
-      }
-    }
+    inputCell = $(this).attr("id");
+    grabCharacter = inputCell[0];
+    markCell(grabCharacter);
   });
 
 });
